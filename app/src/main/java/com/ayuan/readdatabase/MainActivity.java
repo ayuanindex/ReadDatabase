@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         //第二种方式读取数据库
         //由于其他应用已经通过内容提供者暴露出来了 所以可以直接通过内容的解析者来访问
         //1.拿到内容的解析这
-        Uri uri = Uri.parse("com.ayuan.provider/query");//路径和定义的路径的一样
+        Uri uri = Uri.parse("content://com.ayuan.provider/query");//路径和定义的路径的一样
         Cursor query = getContentResolver().query(uri, null, null, null, null);
         if (query != null && query.getCount() > 0) {
             while (query.moveToNext()) {
