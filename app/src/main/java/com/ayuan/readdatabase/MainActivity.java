@@ -34,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
                 Log.i(TAG, "姓名:" + name + " 金额:" + money);
             }
         }
-
         //---------------------------------------------------------------------------------------------------------
         //给数据库增加一条数据
         Uri parse = Uri.parse("content://com.ayuan.provider/insert");
@@ -59,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
         //返回值为修改的行数
         int update = getContentResolver().update(parse2, contentValues1, "name=?", new String[]{"张三"});
         Log.i(TAG, "update:" + update);
+
+
         /**
          * 需求：读取其他应用私有的数据库
          * path:需要打开数据库的路径
